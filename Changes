@@ -1,0 +1,10 @@
+---
+global:
+  name: Algorithm-EquivalenceSets
+releases:
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - original version
+    date: 2007-11-26T23:05:32Z
+    tags: []
+    version: 0.01
