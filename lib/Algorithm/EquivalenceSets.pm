@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 use base 'Exporter';
@@ -54,7 +54,7 @@ __END__
 
 =head1 NAME
 
-Algorithm::EquivalenceSets - FIXME
+Algorithm::EquivalenceSets - Group sets transitively
 
 =head1 SYNOPSIS
 
@@ -96,7 +96,7 @@ please use the C<algorithmequivalencesets> tag.
 
 =head1 VERSION 
                    
-This document describes version 0.01 of L<Algorithm::EquivalenceSets>.
+This document describes version 0.02 of L<Algorithm::EquivalenceSets>.
 
 =head1 BUGS AND LIMITATIONS
 
@@ -122,7 +122,7 @@ Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Marcel GrE<uuml>nauer
+Copyright 2007-2008 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
