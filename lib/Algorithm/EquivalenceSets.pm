@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 use base 'Exporter';
@@ -50,8 +50,6 @@ sub equivalence_sets {
 
 __END__
 
-
-
 =head1 NAME
 
 Algorithm::EquivalenceSets - Group sets transitively
@@ -89,21 +87,11 @@ now flame me about the misuse of terminology.)
 Each set is an array reference. The return sets are given as an array in list
 context, or as a reference to that array in scalar context.
 
-=head1 TAGS
-
-If you talk about this module in blogs, on del.icio.us or anywhere else,
-please use the C<algorithmequivalencesets> tag.
-
-=head1 VERSION 
-                   
-This document describes version 0.02 of L<Algorithm::EquivalenceSets>.
-
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
-Please report any bugs or feature requests to
-C<<bug-algorithm-equivalencesets@rt.cpan.org>>, or through the web interface at
+Please report any bugs or feature requests through the web interface at
 L<http://rt.cpan.org>.
 
 =head1 INSTALLATION
@@ -122,11 +110,10 @@ Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Marcel GrE<uuml>nauer
+Copyright 2007 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
-
 
 =cut
 

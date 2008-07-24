@@ -1,17 +1,13 @@
----
-global:
-  name: Algorithm-EquivalenceSets
-releases:
-  - author: 'Marcel Gruenauer <marcel@cpan.org>'
-    changes:
-      - set the version to 0.02
-      - provide abstract line
-    date: 2007-11-28T11:15:12Z
-    tags: []
-    version: 0.02
-  - author: 'Marcel Gruenauer <marcel@cpan.org>'
-    changes:
-      - original version
-    date: 2007-11-26T23:05:32Z
-    tags: []
-    version: 0.01
+Revision history for Perl extension Algorithm-EquivalenceSets
+
+0.03  Thu Jul 24 20:35:33 CEST 2008 (Marcel Gruenauer <marcel@cpan.org>)
+     - Changed dist style and Changes back to standard. People didn't like it -
+       the nail that sticks out gets hammered down.
+     - Added standard test files; this will also help with CPANTS.
+
+0.02  Wed, 28 Nov 2007 11:15:12 -0000 (Marcel Gruenauer <marcel@cpan.org>)
+     - set the version to 0.02
+     - provide abstract line
+
+0.01  Mon, 26 Nov 2007 23:05:32 -0000 (Marcel Gruenauer <marcel@cpan.org>)
+     - original version
