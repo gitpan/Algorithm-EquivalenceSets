@@ -1,12 +1,9 @@
 #!/usr/bin/env perl
-
 use warnings;
 use strict;
 use Algorithm::EquivalenceSets;
 use Test::More;
 use YAML;
-
-
 my $tests = Load(<<EOYAML);
 - data:
     -
@@ -108,15 +105,11 @@ my $tests = Load(<<EOYAML);
     - 57cf
     - 12346abde
 EOYAML
-
 plan tests => scalar @$tests;
-
 for my $test (@$tests) {
     my $sep = equivalence_sets($test->{data});
 
     # transform the result slightly for easier testing
     $_ = join '' => sort @$_ for @$sep;
-
-    ok(eq_set($sep, $test->{expect}), join ' - ' => @{$test->{expect}});
+    ok(eq_set($sep, $test->{expect}), join ' - ' => @{ $test->{expect} });
 }
-

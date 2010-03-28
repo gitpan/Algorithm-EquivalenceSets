@@ -1,38 +1,33 @@
-package Algorithm::EquivalenceSets;
-
+use 5.006;
 use strict;
 use warnings;
 
+package Algorithm::EquivalenceSets;
+our $VERSION = '1.100870';
+# ABSTRACT: Group sets transitively
 
-our $VERSION = '0.03';
-
-
-use base 'Exporter';
-
-
+use Exporter qw(import);
 our @EXPORT = qw(equivalence_sets);
 
-
 sub equivalence_sets {
-    my $item_list = shift;
+    my $item_list  = shift;
     my $next_group = 1;
-    my %group;  # key = item, value = group this item belongs to
-    my %member; # key = group name, value = list of items in this group
+    my %group;     # key = item, value = group this item belongs to
+    my %member;    # key = group name, value = list of items in this group
     for my $item_def (@$item_list) {
+
         # flatten item aliases
         my @alias = map { ref eq 'ARRAY' ? @$_ : $_ } @$item_def;
-
         my %seen_group;
+
         # known groups that these aliases belong to
         my @group =
-            grep { !$seen_group{$_}++ }
-            map  { $group{$_} || () }
-            @alias;
+          grep { !$seen_group{$_}++ }
+          map { $group{$_} || () } @alias;
 
         # unify the groups listed in @group by dissolving them and adding
         # their members to the aliases, then forming a new group from the
         # aliases
-
         push @alias, map { @{ $member{$_} } } @group;
         my %seen_member;
         @alias = grep { !$seen_member{$_}++ } @alias;
@@ -43,16 +38,19 @@ sub equivalence_sets {
     }
     wantarray ? values %member : [ values %member ];
 }
-
-
 1;
 
 
 __END__
+=pod
 
 =head1 NAME
 
 Algorithm::EquivalenceSets - Group sets transitively
+
+=head1 VERSION
+
+version 1.100870
 
 =head1 SYNOPSIS
 
@@ -87,33 +85,45 @@ now flame me about the misuse of terminology.)
 Each set is an array reference. The return sets are given as an array in list
 context, or as a reference to that array in scalar context.
 
-=head1 BUGS AND LIMITATIONS
+=head1 METHODS
 
-No bugs have been reported.
+=head2 equivalence_sets
 
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
+FIXME
 
 =head1 INSTALLATION
 
 See perlmodinstall for information and options on installing Perl modules.
 
+=head1 BUGS AND LIMITATIONS
+
+No bugs have been reported.
+
+Please report any bugs or feature requests through the web interface at
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=Algorithm-EquivalenceSets>.
+
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you, or see
+L<http://search.cpan.org/dist/Algorithm-EquivalenceSets/>.
+
+The development version lives at
+L<http://github.com/hanekomu/Algorithm-EquivalenceSets/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
 =head1 AUTHOR
 
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
+  Marcel Gruenauer <marcel@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Marcel GrE<uuml>nauer
+This software is copyright (c) 2007 by Marcel Gruenauer.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 
