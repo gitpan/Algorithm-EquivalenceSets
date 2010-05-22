@@ -2,7 +2,7 @@ NAME
     Algorithm::EquivalenceSets - Group sets transitively
 
 VERSION
-    version 1.100870
+    version 1.101420
 
 SYNOPSIS
         use Algorithm::EquivalenceSets;

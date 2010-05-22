@@ -3,9 +3,11 @@ use strict;
 use warnings;
 
 package Algorithm::EquivalenceSets;
-our $VERSION = '1.100870';
-# ABSTRACT: Group sets transitively
+BEGIN {
+  $Algorithm::EquivalenceSets::VERSION = '1.101420';
+}
 
+# ABSTRACT: Group sets transitively
 use Exporter qw(import);
 our @EXPORT = qw(equivalence_sets);
 
@@ -50,7 +52,7 @@ Algorithm::EquivalenceSets - Group sets transitively
 
 =head1 VERSION
 
-version 1.100870
+version 1.101420
 
 =head1 SYNOPSIS
 
